@@ -1,0 +1,109 @@
+{
+  "name": "bun-typed-sqlite",
+  "version": "1.0.0", 
+  "description": "A type-safe SQLite database library for Bun with powerful schema definition and automatic TypeScript type generation",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "bun": "./src/index.ts",
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./schema": {
+      "bun": "./src/schema.ts",
+      "types": "./src/schema.ts", 
+      "default": "./src/schema.ts"
+    },
+    "./database": {
+      "bun": "./src/class.ts",
+      "types": "./src/class.ts",
+      "default": "./src/class.ts"
+    },
+    "./cli": {
+      "bun": "./src/cli.ts",
+      "types": "./src/cli.ts",
+      "default": "./src/cli.ts"
+    },
+    "./manager": {
+      "bun": "./src/bun-sqlite-manager.ts",
+      "types": "./src/bun-sqlite-manager.ts",
+      "default": "./src/bun-sqlite-manager.ts"
+    },
+    "./types": {
+      "bun": "./src/types.ts",
+      "types": "./src/types.ts",
+      "default": "./src/types.ts"
+    },
+    "./ui": {
+      "bun": "./src/ui.ts",
+      "types": "./src/ui.ts",
+      "default": "./src/ui.ts"
+    }
+  },
+  "bin": {
+    "bun-sqlite-cli": "./bin/cli.ts"
+  },
+  "scripts": {
+    "build:full": "bun run build && bun run build:types",
+    "dev": "bun --watch src/index.ts",
+    "test": "bun test",
+    "lint": "eslint src --ext .ts",
+    "format": "prettier --write src/**/*.ts"
+  },
+  "keywords": [
+    "bun",
+    "database", 
+    "cli",
+    "sqlite",
+    "backup",
+    "restore",
+    "migration",
+    "performance",
+    "typescript"
+  ],
+  "author": "shpaw415",
+  "license": "MIT",
+  "files": [
+    "dist",
+    "src", 
+    "bin",
+    "README.md",
+    "LICENSE"
+  ],
+  "peerDependencies": {
+    "bun-types": "^1.0.0"
+  },
+  "peerDependenciesMeta": {
+    "bun-types": {
+      "optional": false
+    }
+  },
+  "optionalDependencies": {
+    "terminal-kit": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "bun-types": "latest",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "prettier": "^3.0.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "bun": ">=1.0.0"
+  },
+  "trustedDependencies": [
+    "bun-types"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shpaw415/bun-database-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shpaw415/bun-database-cli/issues"
+  },
+  "homepage": "https://github.com/shpaw415/bun-database-cli#readme"
+}

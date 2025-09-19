@@ -1,0 +1,48 @@
+{
+  "compilerOptions": {
+    // Output configuration
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "target": "esnext",
+    "verbatimModuleSyntax": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    
+    // Environment setup for Bun
+    "types": ["bun-types"],
+    
+    // Module system
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    
+    // Strict type checking
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    
+    // Performance and compatibility
+    "skipLibCheck": true,
+    
+    // Path resolution
+    "baseUrl": "./",
+    "rootDir": "./",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": [
+    "src/**/*",
+    "test/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.test.ts",
+    "**/*.spec.ts"
+  ]
+}
