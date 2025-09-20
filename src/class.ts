@@ -665,14 +665,16 @@ export class DatabaseManager<Schema extends readonly TableSchema[]> extends Data
   }
 
   getTable<K extends keyof DBSchemaToTableTypes<Schema>>(
-    tableName: K
+    tableName: K,
+    options?: { debug?: boolean; }
   ): Table<DBSchemaToTableTypes<Schema>[K] & Record<string, any>, DBSchemaToTableTypes<Schema>[K] & Record<string, any>> {
     return new Table<DBSchemaToTableTypes<Schema>[K] & Record<string, any>, DBSchemaToTableTypes<Schema>[K] & Record<string, any>>({
       name: tableName as string,
       db: this.databaseInstance,
       schema: this.DBSchema,
       debug: false,
-      enableWAL: true
+      enableWAL: true,
+      ...options,
     });
   }
 
